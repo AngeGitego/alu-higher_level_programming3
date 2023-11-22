@@ -7,18 +7,17 @@ BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 class Rectangle(BaseGeometry):
     '''Rectangle class that inherits the BaseGeometry '''
-
-    def __init__(self, width, height):
-        '''A function that created a rectangle '''
-        self.integer_validator('width', width)
+  def __init__(self, width, height):
+        '''Constructor.'''
+        self.integer_validator("width", width)
+        self.integer_validator("height", height)
         self.__width = width
-        self.integer_validator('height', height)
         self.__height = height
 
     def area(self):
-        '''Function to return the area of the rectangle'''
-        return self.__height * self.__width
+        '''Method which returns area of rectangle.'''
+        return self.__width * self.__height
 
     def __str__(self):
-        '''Returns [Rectangle] '''
-        return str("[Rectangle] {}/{}".format(self.__width, self.__height))
+        '''String representation method.'''
+        return "[Rectangle] " + str(self.__width) + "/" + str(self.__height)
